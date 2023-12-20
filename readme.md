@@ -1,11 +1,14 @@
-/** add script in theme liquid or any liquid file
- * 
- * <script> window.money_format = {{ shop.money_format | json }}; </script>
- * 
- */
+# How to use
 
-const formattedPrice = formatMoney(productData.price, window.money_format);
+## Add script in theme liquid or any liquid file
 
+```
+<script> window.money_format = {{ shop.money_format | json }}; </script>
+```
+
+## Declare a function
+
+```
 function formatMoney(cents, format) {
   if (typeof cents == 'string') { cents = cents.replace('.',''); }
   var value = '';
@@ -49,3 +52,12 @@ function formatMoney(cents, format) {
 
   return formatString.replace(placeholderRegex, value);
 };
+```
+
+## Format data in JS
+
+```
+const formattedPrice = formatMoney(productData.price, window.money_format);
+```
+
+Say thanks for [me](https://github.com/skomskiy)!
